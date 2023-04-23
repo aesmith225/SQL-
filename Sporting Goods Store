@@ -1,0 +1,26 @@
+Making my table about a Sporting Goods Store: items, price, color, and inventory
+CREATE TABLE sports_store(id integer primary key, item text, price integer, color text, quantity integer);
+
+Inserting all my values. I figures out here you could have multiple items with the same name as long as your identifer was differnt. 
+INSERT INTO sports_store VALUES(1, "Basketballs",25,"orange",20);
+INSERT INTO sports_store VALUES(2, "Pom-Poms", 17,"purple",100);
+INSERT INTO sports_store VALUES(3, "Footballs",20, "multiple", 4);
+INSERT INTO sports_store VALUES(4, "Trophies",100, "gold", 12);
+INSERT INTO sports_store VALUES(5, "Basketball Jerseys", 50, "yellow", 9);
+INSERT INTO sports_store VALUES(6, "Basketball Jerseys", 50, "red", 15);
+INSERT INTO sports_store VALUES(7, "Basketball Jerseys", 50, "purple", 23);
+INSERT INTO sports_store VALUES(8, "Football Jerseys", 50, "yellow", 0);
+INSERT INTO sports_store VALUES(9, "Football Jerseys", 50, "red", 10);
+INSERT INTO sports_store VALUES(10, "Football Jerseys", 50, "purple", 20);
+INSERT INTO sports_store VALUES(11, "Soccer Jerseys", 50, "yellow", 40);
+INSERT INTO sports_store VALUES(12, "Soccer Jerseys", 50, "red", 4);
+INSERT INTO sports_store VALUES(13, "Soccer Jerseys", 50, "blue", 12);
+INSERT INTO sports_store VALUES (14, "Soccer Balls", 45, "black", 13);
+INSERT INTO sports_store VALUES (15, "Soccer Balls", 45, "black and white", 1);
+
+This orders my items in my store by pricing.
+SELECT * FROM sports_store ORDER BY price;
+
+This command, I figured I would select color (as if these were different schools) and sum the total value (price and quantity) of what I had in stock.
+SELECT color, sum(price*quantity) FROM sports_store GROUP BY color;
+
